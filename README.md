@@ -7,14 +7,14 @@ There are separate setup instructions for [windows](https://www.udemy.com/the-co
 
 Have the following tools installed:
 
-[xcode](https://developer.apple.com/xcode/). 
-[homebrew](https://brew.sh/). 
-[node/npm](https://nodejs.org/en/download/). 
+[xcode](https://developer.apple.com/xcode/)<br/>
+[homebrew](https://brew.sh/)<br/>
+[node/npm](https://nodejs.org/en/download/)<br/>
 watchman. 
 ```
 brew install watchman
 ```
-RN CLI. 
+RN CLI<br/>
 Try this first...
 ```
 npm install -g react-native-cli
@@ -45,6 +45,33 @@ error Command failed: xcrun instruments -s
 xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
 . Run CLI with --verbose flag for more details.
 ```
-In xcode, go to xcode > preferences > locations and select your Xcode version from the dropdown and exit Xcode. Run your project again and you should see an iphone simulator pop up.   
+In xcode, go to xcode > preferences > locations and select your Xcode version from the dropdown and exit Xcode. Run your project again and you should see an iphone simulator pop up.<br/><br/>
 
 Your first build will take a while to fully compile. After compiling if for whatever reason the simulator doesn't launch directly into your app, slide the homescreen until you see your app and launch it. If your app isn't appearing have a look at your terminal it could still be compiling.
+
+# Install ESLint
+
+Install eslint globally:
+```
+npm install -g eslint
+```
+If you're using Sublime 3 follow the instructions to [install package control](https://packagecontrol.io/installation). 
+
+In Sublime hit CMD+SHIFT+P and look for "Install Package" and then "Sublime Linter".
+Do the same thing as above but look for "sublimelinter-contrib-eslint".
+
+Next you will setup your eslint config:
+```
+cd yourappname
+npm install --save-dev eslint-config-rallycoding
+```
+To use the rallycoding eslint rules create a file in your project called .eslintrc and add the following:
+```
+{
+	"extends": "rallycoding"
+}
+```
+Restart your IDE after doing this
+
+# For Additional Setup Troubleshooting
+https://rallycoding.com/blog/troubleshooting-react-native-startup/
