@@ -7,14 +7,14 @@ There are separate setup instructions for [windows](https://www.udemy.com/the-co
 
 Have the following tools installed:
 
-[xcode](https://developer.apple.com/xcode/)
-[homebrew](https://brew.sh/)
-[node/npm](https://nodejs.org/en/download/)
-watchman
+[xcode](https://developer.apple.com/xcode/). 
+[homebrew](https://brew.sh/). 
+[node/npm](https://nodejs.org/en/download/). 
+watchman. 
 ```
 brew install watchman
 ```
-RN CLI
+RN CLI. 
 Try this first...
 ```
 npm install -g react-native-cli
@@ -45,6 +45,6 @@ error Command failed: xcrun instruments -s
 xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
 . Run CLI with --verbose flag for more details.
 ```
-Then in Xcode, go to xcode > preferences > locations and select your Xcode version from the dropdown and exit Xcode.
-Run your project again and you should see an iphone simulator pop up. Your first build will take a while.
-If for whatever reason the simulator doesn't launch directly into your app, slide the homescreen until you see your app and launch it. If you app isn't appearing have a look at your terminal it could still be compiling.
+In xcode, go to xcode > preferences > locations and select your Xcode version from the dropdown and exit Xcode. Run your project again and you should see an iphone simulator pop up.   
+
+Your first build will take a while to fully compile. After compiling if for whatever reason the simulator doesn't launch directly into your app, slide the homescreen until you see your app and launch it. If your app isn't appearing have a look at your terminal it could still be compiling.
