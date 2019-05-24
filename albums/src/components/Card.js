@@ -1,13 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Card = (props) => {
-    return (
-        <View style={styles.containerStyle}>
-            {props.children}
-        </View>
-    );
-};
+const Card = (props) => (
+    <View style={styles.containerStyle}>
+        {props.children}
+    </View>
+);
 
 // To set 'borderBottomWidth' you either need all other sides explicitly 
 // set OR set the 'backgroundColor' before hand
