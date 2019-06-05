@@ -49,6 +49,18 @@ In xcode, go to xcode > preferences > locations and select your Xcode version fr
 
 Your first build will take a while to fully compile. After compiling if for whatever reason the simulator doesn't launch directly into your app, slide the homescreen until you see your app and launch it. If your app isn't appearing have a look at your terminal it could still be compiling.
 
+# How to fix »EACCES« errors with npm on Mac OS X
+If you installed Node.js and npm using root permissions, you might end up with some nasty npm ERR! Error: EACCES errors as soon as you’re trying to install packages from npm. Consequently, you need to prefix your npm commands using sudo every time you want to install a package—which is anything but ideal. It seems that those problems are a result of using the .pkg installer provided on the Node.js website.
+
+So, instead of running sudo npm install … each and every time, you can address the underlying issue by changing the permissions/ownership of two directories on your machine.
+
+```
+sudo chown -R `whoami` ~/.npm
+sudo chown -R `whoami` /usr/local/lib/node_modules
+```
+
+Now you should be able to use npm without sudo.
+
 # Install ESLint
 
 Install eslint globally:
