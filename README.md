@@ -10,7 +10,7 @@ Have the following tools installed:
 [xcode](https://developer.apple.com/xcode/)<br/>
 [homebrew](https://brew.sh/)<br/>
 [node/npm](https://nodejs.org/en/download/)<br/>
-watchman>br/>
+watchman<br/>
 ```
 brew install watchman
 ```
