@@ -10,7 +10,7 @@ Have the following tools installed:
 [xcode](https://developer.apple.com/xcode/)<br/>
 [homebrew](https://brew.sh/)<br/>
 [node/npm](https://nodejs.org/en/download/)<br/>
-watchman. 
+watchman>br/>
 ```
 brew install watchman
 ```
@@ -45,7 +45,11 @@ error Command failed: xcrun instruments -s
 xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
 . Run CLI with --verbose flag for more details.
 ```
-In xcode, go to xcode > preferences > locations and select your Xcode version from the dropdown and exit Xcode. Run your project again and you should see an iphone simulator pop up.<br/><br/>
+In xcode:
+* Go to xcode > preferences > locations 
+* select your Xcode version from the dropdown and exit Xcode
+* Run your project again and you should see an iphone simulator pop up
+<br/><br/>
 
 Your first build will take a while to fully compile. After compiling if for whatever reason the simulator doesn't launch directly into your app, slide the homescreen until you see your app and launch it. If your app isn't appearing have a look at your terminal it could still be compiling.
 
