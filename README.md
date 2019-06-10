@@ -35,6 +35,11 @@ To run your first project enter the following in the terminal:
 cd yourappname
 react-native run-ios
 ```
+# Installing IOS Simulator
+In xcode:
+* Go to xcode > preferences > components
+* Click the little arrow beside the version of IOS simulator you want to install
+
 # Fixing Xcode Command Line Tools Location
 If you were able to run your first project you don't need to do this,
 but if you run your first project and see an error like this in the terminal:
