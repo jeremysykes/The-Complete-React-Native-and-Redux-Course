@@ -32,6 +32,20 @@ cd into your project and save it to your node_modules folder
 ```
 npm i --save firebase
 ```
+Setup an application in your firebase account within the browser and add a lifecycle method like this using the config object from your firebase app
+```
+componentWillMount() {
+    firebase.initializeApp({
+      apiKey: 'API_KEY_HERE',
+      authDomain: 'AUTH_DOMAIN',
+      databaseURL: 'DATABASE_URL',
+      projectId: 'PROJECT_ID_HERE',
+      storageBucket: 'STORAGE_BUCKET',
+      messagingSenderId: 'MESSAGING_SENDER_ID',
+      appId: 'APP_ID'
+    });
+  }
+```
 
 # Create Your First Project
 To create your first project enter the following in the terminal:
