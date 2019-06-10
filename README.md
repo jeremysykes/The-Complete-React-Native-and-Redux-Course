@@ -23,6 +23,10 @@ npm install -g react-native-cli
 ```
 sudo npm install -g react-native-cli
 ```
+Install firebase CLI
+```
+npm install -g firebase-tools
+```
 
 # Create Your First Project
 To create your first project enter the following in the terminal:
