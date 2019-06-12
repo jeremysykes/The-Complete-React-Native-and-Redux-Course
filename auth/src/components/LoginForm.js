@@ -1,8 +1,62 @@
 import React, { Component } from 'react';
-import { Button, Card, CardSection, Input } from './common';
+import { Text } from 'react-native';
+import firebase from 'firebase';
+import { Button, Card, CardSection, Input, Spinner } from './common';
 
 class LoginForm extends Component {
-  state = { email: '', password: '' };
+  state = {
+    email: '',
+    error: '',
+    loading: false,
+    password: ''
+  };
+
+  onButtonPress() {
+    const { email, password } = this.state;
+
+    this.setState({
+      error: '',
+      loading: true
+    });
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(this.onLoginSuccess.bind(this))
+      .catch(() => {
+        // User has failed to log in, attempt to create an account using the email and password
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
+          .then(this.onLoginSuccess.bind(this))
+          .catch(this.onLoginFail.bind(this));
+      });
+  }
+
+  onLoginSuccess() {
+    this.setState({
+      email: '',
+      password: '',
+      loading: false,
+      error: ''
+    });
+  }
+
+  onLoginFail() {
+    this.setState({
+      error: 'Authentication failed.',
+      loading: false
+    });
+  }
+
+  renderButton() {
+    if (this.state.loading) {
+      return <Spinner size='small' />;
+    }
+
+    return <Button onPress={this.onButtonPress.bind(this)}>{'Log In'}</Button>;
+  }
+
   render() {
     return (
       <Card>
@@ -25,12 +79,19 @@ class LoginForm extends Component {
             onChangeText={password => this.setState({ password })}
           />
         </CardSection>
-        <CardSection>
-          <Button>{'Log In'}</Button>
-        </CardSection>
+        <Text style={styles.errorTextStyle}>{this.state.error}</Text>
+        <CardSection>{this.renderButton()}</CardSection>
       </Card>
     );
   }
 }
+
+const styles = {
+  errorTextStyle: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'red'
+  }
+};
 
 export default LoginForm;
